@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>purgatory</title>
+    <style media="screen">
+      body,
+      html {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        line-height: 80%;
+        color: white;
+        font-size: 13vw;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: hsla(0, 100%, 60%, 1);
+      }
+      .left {
+        display: flex;
+        line-height: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        font-size: 25%;
+        -webkit-text-stroke-width: 0;
+        -webkit-text-stroke-color: initial;
+        color: black;
+      }
+      @media (prefers-color-scheme: dark) {
+        body,
+        html {
+          background-color: #131313;
+        }
+        .container {
+          color: #131313;
+          -webkit-text-stroke-width: 2px;
+        }
+        .left {
+          color: white;
+        }
+      }
+      @media (min-width: 1025px) {
+        .container {
+          font-size: 500%;
+        }
+      }
+      a {
+        color: hsla(0, 100%, 60%, 1);
+      }
+      .red {
+        color: hsla(0, 100%, 60%, 1);
+        text-shadow: none;
+      }
+      .right {
+        top: 0;
+        font-size: 30%;
+        line-height: 100%;
+        color: hsla(0, 100%, 60%, 1);
+      }
+      .mini-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        height: 10vh;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="mini-container">
+        <span>HAZE BOOTH</span>
+        <span>HAZE BOOTH</span>
+        <span>HAZE BOOTH</span>
+        <span class="red">HAZE BOOTH</span>
+        <span>HAZE BOOTH</span>
+        <span>HAZE BOOTH</span>
+        <span>HAZE BOOTH</span>
+        <div class="bottom">
+          <div class="left">
+            <span>haze#0420</span>
+            <span>isnt@haze.cool</span>
+            <a href="https://github.com/hazebooth">code</a>
+          </div>
+          <div class="right">
+            HAVE A NICE DAY
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
