@@ -11,8 +11,9 @@
   let rotX = Math.random() >= 0.5;
 
   const resetViewport = () => {
-    const vw = viewport.offsetWidth;
-    const vh = viewport.offsetHeight;
+    let domRect = viewport.getBoundingClientRect();
+    const vw = domRect.width;
+    const vh = domRect.height;
     renderer.setSize(vw, vh);
     camera.aspect = vw/vh;
     camera.updateProjectionMatrix();
@@ -22,12 +23,18 @@
 
   onMount(() => {
     const scene = new THREE.Scene();
-    const vw = viewport.offsetWidth;
-    const vh = viewport.offsetHeight;
+    let domRect = viewport.getBoundingClientRect();
+    let vw = domRect.width;
+    let vh = domRect.height;
+    if (vh == 0) { // special case -_-
+      vw = (window.innerWidth / 10) * 6.5; // 65%
+      vh = (window.innerHeight / 5); // 20%
+    }
     camera = new THREE.PerspectiveCamera(45, vw/vh, 1, 1000);
     camera.position.z = 70;
     renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(vw, vh);
+    renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(vw, vh);
     /* resetViewport(); */
     viewport.appendChild( renderer.domElement );
     const material = new THREE.MeshNormalMaterial({ wireframe: true });
